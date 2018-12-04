@@ -1,0 +1,47 @@
+<% include partials/header %>
+
+
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md ftco-animate">
+
+        <h1 class="text-align-center" > Select the images for the <%= tour.title %> tour </h1>
+        <br>
+
+        <form class="some-form"  action="/admin/tours/<%= tour._id %>/dayinfo/images?_method=PUT" method="POST">
+
+             <% tour.dayInfo.forEach ( (day) => { %>
+                  <header>
+                    <h3>Images of <b>Day  <%= day.day %><b></h3>
+                  </header>
+                  <hr>
+
+                   <% for (let i = 1; i <= day.imageamount; i++ ) { %>
+                    <!-- tour info -->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input type="text" name="images<%= day.day %><%= i %>[title]" value="" placeholder="Short title of image <%= i %>" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" name="images<%= day.day %><%= i %>[description]" value="" placeholder="Short description of image <%= i %>" class="form-control">
+                      </div>
+                    </div>
+                    <br>
+                    <input type="text" name="images<%= day.day %><%= i %>[link]" value="" placeholder="link of image <%= i %>" class="form-control">
+                    <br>
+                   <% } %>
+          <% }); %>
+
+          <input type="submit" name="" value="SAVE AND EXIT" class="btn btn-success btn-block rounded">
+        </form>
+
+      </div> <!-- .col-md-8 -->
+    </div>
+  </div>
+
+</section> <!-- .section -->
+
+
+
+<% include partials/footer %>

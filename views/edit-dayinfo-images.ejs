@@ -1,0 +1,71 @@
+<% include partials/header %>
+
+
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md ftco-animate">
+
+        <h1 class="text-align-center" > Select the images for the <%= tour.title %> tour </h1>
+        <br>
+
+        <form class="some-form"  action="/admin/tours/<%= tour._id %>/edit/dayinfo/images?_method=PUT" method="POST">
+
+             <% tour.dayInfo.forEach ( (day, i) => { %>
+
+                  <header>
+                     <h3>Images of <b>Day  <%= day.day %><b></h3>
+                  </header>
+                  <hr>
+
+              <% for ( let j = 1; j <= day.imageamount; j++) {  %>
+
+                  <%if ( day.images[j-1] !== undefined ) {%>
+                    <!-- tour info -->
+                    <header>
+                      <h5>Image <%= j  %></h5>
+                    </header>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input type="text" name="images<%= day.day  %><%= j  %>[title]" value="<%= day.images[j-1].title %>"  class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" name="images<%= day.day  %><%= j  %>[description]" value="<%= day.images[j-1].description %>"  class="form-control">
+                      </div>
+                    </div>
+                    <br>
+                    <input type="text" name="images<%= day.day  %><%= j %>[link]" value="<%= day.images[j-1].link %>"  class="form-control">
+                   <br>
+                 <% } else { %>
+
+                   <header>
+                     <h5>Image <%= j  %></h5>
+                   </header>
+                     <div class="row">
+                       <div class="col-md-6">
+                         <input type="text" name="images<%= day.day %><%= j %>[title]" placeholder="Short title of image <%= j %>"  class="form-control">
+                       </div>
+                       <div class="col-md-6">
+                         <input type="text" name="images<%= day.day %><%= j  %>[description]" placeholder="Short description of image <%= j %>" class="form-control">
+                       </div>
+                       </div>
+                     <br>
+                     <input type="text" name="images<%= day.day  %><%= j %>[link]" placeholder="link of image <%= j %>"  class="form-control">
+                    <br>
+                 <% } %>
+
+            <% } %>
+
+          <% }); %>
+          <input type="submit" name="" value="UPDATE AND EXIT TO MAIN PAGE" class="btn btn-success btn-block rounded">
+        </form>
+
+      </div> <!-- .col-md-8 -->
+    </div>
+  </div>
+
+</section> <!-- .section -->
+
+
+
+<% include partials/footer %>

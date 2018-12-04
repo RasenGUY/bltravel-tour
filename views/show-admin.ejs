@@ -1,0 +1,97 @@
+<% include partials/header %>
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/"><img src="/static/images/logo/logo-big.svg" alt="Bltravel Logo" class="logo-off" id="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item"><a href="/admin/options" class="nav-link">Options</a></li>
+        <li class="nav-item active"><a href="/admin/tours" class="nav-link">Tours</a></li>
+        <li class="nav-item" ><a href="/logout" method="get" class="nav-link" id="logout">Logout</a></li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('<%= tour.thumbnail %>');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+      <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/options">OPTIONS</a></span></p>
+        <% var duration = 0 %>
+        <% tour.dayInfo.forEach( () => { duration += 1 } )%>
+        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><%= tour.title %><br>(<%= duration %> days and <%= duration + 1 %> nights)</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 ftco-animate text-justify">
+
+        <h2><b>Description</b></h2>
+        <p><%= tour.generalDescription %> </p>
+
+        <% tour.dayInfo.forEach( (info) => { %>
+        <h2 class="mb-3">Day <%= info.day %>: <b><%= info.title %></b></h2>
+        <h5>Route: <%= info.route  %> (<%= info.distance  %>Km/<%= Math.round(info.distance * 1000 * 0.00062137119223733) %>Mi)</h5>
+        <div><%= info.description %></div>
+        <br>
+        <br>
+
+        <!-- image slider -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="galleria">
+                <% info.images.forEach((image) => { %>
+                <img src="<%= image.link %>" data-title="<%= image.title %>" data-description="<%= image.description %>">
+                <% })%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <% } )%>
+        <div class="row">
+
+          <div class="col-md-4 text-center">
+            <a class="btn btn-success rounded btn-block" href="<%= tour._id %>/edit" role="button">Edit</a>
+          </div>
+          <div class="col-md-4 offset-md-4">
+            <form  action="/admin/tours/<%= tour._id %>/delete?_method=DELETE" method="post" class='text-center'>
+              <button class="btn btn-danger rounded btn-block">Delete tour</button>
+            </form>
+          </div>
+        </div>
+
+
+      </div> <!-- .col-md-8 -->
+
+
+    </div>
+  </div>
+</section>
+
+
+<script type="text/javascript">
+(function() {
+          Galleria.loadTheme('/static/libs/galleria/themes/classic/galleria.classic.min.js');
+          Galleria.run('.galleria');
+      }());
+</script>
+
+<% include partials/footer %>

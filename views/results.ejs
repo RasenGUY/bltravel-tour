@@ -1,0 +1,82 @@
+<% include partials/header %>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">Adventure</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/tours" class="nav-link">Tours</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="https://www.nakai-resort.com/" class="nav-link">Hotel</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END nav -->
+
+<!-- hero -->
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/bg_1.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+      <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index">Home</a></span> <span>Places</span></p>
+        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Tour Packages</h1>
+        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Take a look at all of the tour packages we have to offer</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row">
+  <!-- tour packages -->
+  <% query.forEach(function (tour){ %>
+      <div class="col-sm col-md-6 col-lg-4 ftco-animate">
+        <div class="destination">
+          <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(<%= tour.thumbnail %>);">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <span class="icon-link"></span>
+            </div>
+          </a>
+          <div class="text p-3">
+            <div class="d-flex">
+              <div class="one">
+                <h3><a href="#"><%= tour.title %> </a></h3>
+              </div>
+            </div>
+            <% var len = 75; %>
+            <% var truncatedDes = tour.generalDescription.substring(0,len) + "...";%>
+            <p><%= truncatedDes %> </p>
+            <% var duration = 0 %>
+            <% tour.dayInfo.forEach( () => { duration += 1 } )%>
+            <p class="days"><span><%= duration %> days <%= duration + 1 %> nights</span></p>
+            <% var categories = "" %>
+            <% tour.categories.forEach( (cat) => { categories += cat + " " } ) %>
+            <p class="days"><span> <%= categories %></span></p>
+            <hr>
+            <p class="bottom-area d-flex">
+            <% var locations = ""; %>
+            <% tour.locations.forEach ((location ) => { locations += location + " "}) %>
+              <span><i class="icon-map-o"></i> <%= locations %></span>
+              <span class="ml-auto"><a href="/tour/<%= tour._id %>">Discover</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+<%})%>
+    </div>
+  </div> <!-- end row -->
+</section> <!-- .section -->
+
+
+
+
+
+<% include partials/footer %>

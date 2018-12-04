@@ -1,0 +1,116 @@
+<% include partials/header %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXxxUD-lvC4xld8OxrmNCbLB-h6r7Vtok&callback=initMap" async defer></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/"><img src="/static/images/logo/logo-big.svg" alt="Bltravel Logo" class="logo-off" id="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item "><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="tours" class="nav-link">Tours</a></li>
+        <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+        <li class="nav-item active"><a href="contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="https://www.nakai-resort.com/" class="nav-link">Hotel</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/hero/contact.JPG');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+      <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Home</a></span> <span>CONTACT</span></p>
+        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Contact</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="ftco-section contact-section ftco-degree-bg">
+  <div class="container">
+    <div class="row d-flex mb-5 contact-info">
+      <div class="col-md-12 mb-4">
+        <h2 class="h4">Contact Information</h2>
+        <p>Your opinion means a lot to us. For any inquiries, you may fill in the form below. We will get back to you as soon as possible.</p>
+        <p>Or, you can also contact us directly by sending us an email or giving us a call at: </p>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-md-4">
+        <p><span><b>Email: </b></span> <a href="mailto:bltraveltour@gmail.com">bltraveltour@gmail.com</a></p>
+      </div>
+      <div class="col-md-4">
+        <p><span><b>Mobile Number: </b></span> <a href="tel://008562055581511">(+85620) 5558 1511</a></p>
+      </div>
+      <div class="col-md-4">
+        <p><span><b>Mobile Whatsapp Number: </b></span> <a href="tel://008562055581511">(+85620) 7777 2911</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section ftco-degree-bg" style="position: relative;">
+
+  <!-- google map -->
+  <div id='map'  style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 0; ">
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- contact form -->
+      <div class="col-md-6 offset-md-6" style='padding: 2rem 0rem;'>
+        <form action="/contact" method="post">
+          <div class="form-group" >
+            <input type="text" class="form-control rounded" name="name" placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control rounded" name="email" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control rounded" name="messageHeader" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <textarea cols="30" rows="7" class="form-control rounded" name="messagebody" placeholder="Message" ></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Send Message" class="btn btn-primary rounded float-right">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- <section class="ftco-section-parallax">
+  <div class="parallax-img d-flex align-items-center">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+          <h2>Subcribe to our Newsletter</h2>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+          <div class="row d-flex justify-content-center mt-5">
+            <div class="col-md-8">
+              <form action="#" class="subscribe-form">
+                <div class="form-group d-flex">
+                  <input type="text" class="form-control" placeholder="Enter email address">
+                  <input type="submit" value="Subscribe" class="submit">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<% include partials/footer %>

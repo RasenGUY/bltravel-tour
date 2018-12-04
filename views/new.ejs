@@ -1,0 +1,51 @@
+<% include partials/header %>
+
+
+  <section class="ftco-section ftco-degree-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md ftco-animate">
+
+          <form  action="/admin/tours/new" method="post">
+            <header class="text-center"><h3>Fill in the general information of the tour in the form below </h3></header>
+            <br>
+            <div class="row">
+              <div class="col-md-4">
+                <input type="text" name="tour[date]" value="" placeholder="today's date" class="form-control checkin_date">
+              </div>
+              <div class="col-md-8">
+                <input type="text" name="tour[title]" value="" placeholder="Title of the tour" class="form-control">
+              </div>
+            </div>
+            <br>
+            <input type="text" name="tour[thumbnail]" value="" placeholder="Main image that will be displayed in the top of the tour page and in the tour card" class="form-control">
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" name="tour[categories]" value="" placeholder="example: Adventure Hiking Motorbike (with spaces)" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="tour[locations]" value="" placeholder="example: Thakek Vientiane Location (with spaces)" class="form-control">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <textarea name="tour[generalDescription]" value="" placeholder="General description or introduction of the tour" class="form-control" rows="10"></textarea>
+              </div>
+              <div class="col-md-6">
+                <input type="number" name="tour[duration]" value="" placeholder="how many days does this tour take" class="form-control">
+              </div>
+            </div>
+            <br>
+
+            <input type="submit" name="submit-button" value="Continue" class="btn btn-success rounded float-right">
+          </form>
+
+        </div> <!-- .col-md-8 -->
+      </div>
+    </div>
+
+  </section> <!-- .section -->
+
+<% include partials/footer %>

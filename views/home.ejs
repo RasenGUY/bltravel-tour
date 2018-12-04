@@ -1,0 +1,205 @@
+<% include partials/header %>
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/"><img src="/static/images/logo/logo-big.svg" alt="Bltravel Logo" class="logo-off" id="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="tours" class="nav-link">Tours</a></li>
+        <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="https://www.nakai-resort.com/" class="nav-link">Hotel</a></li>
+      </ul>
+    </div>
+
+
+  </div>
+</nav>
+<!-- END nav -->
+
+<div class="hero-wrap js-fullheight " style="background-image: url('/static/images/hero/main.JPG');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+      <div class="col-md-9 ftco-animate mb-5 pb-5 text-center text-md-left" data-scrollax=" properties: { translateY: '70%' }">
+        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">BL Travel & Tour Co., Ltd</h1>
+        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">See Laos through the eyes of a local</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="ftco-section justify-content-end ftco-search">
+  <div class="container-wrap ml-auto">
+    <div class="row no-gutters justify-content-end">
+        <div class="tab-content p-4 px-5" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+
+            <form class="search-destination" action="/results">
+              <div class="row">
+                <div class="col-md align-items-end">
+                  <div class="form-group">
+                    <label for="#">Category</label>
+                    <div class="form-field">
+                      <div class="icon"><span class="icon-my_location"></span></div>
+                      <select name="category" id="#q-category" class="form-control">
+                        <option value="  " selected>Category</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Motorbike">Motorbike</option>
+                        <option value="Hiking">Hiking</option>
+                        <option value="Trekking">Trekking</option>
+                        <option value="Fishing">Fishing</option>
+                        <option value="Kayaking">Kayaking</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md align-items-end">
+                  <div class="form-group">
+                    <label for="#">Where</label>
+                    <div class="form-field">
+                      <div class="icon"><span class="icon-map-marker"></span></div>
+                      <input type="text" class="form-control" placeholder="Location" name="location">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md align-self-end">
+                  <div class="form-group">
+                    <div class="form-field">
+                      <input type="submit" value="Search" class="form-control btn btn-primary rounded">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- company intro text -->
+<section class="ftco-section bg-light d-md-flex">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="intro mb-4 ftco-animate" style="text-align: center;">
+          <p>Our company provides a variety of services ranging from accommodation, tours and travel packages for all occasions and budgets. We as locals have a unique insight to the highlights of our country</p>
+          <br>
+          <p>We always strive to do our best and to give the utmost quality service to all our customers. If you have any questions don’t hesitate to ask.  We will do the best we can to meet your needs!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who we are ? -->
+<section class="ftco-about d-md-flex">
+  <div class="one-half img" style="background-image: url(/static/images/home/bounlist.jpg);"></div>
+  <div class="one-half ftco-animate">
+    <div class="heading-section ftco-animate ">
+      <h2 class="mb-4">Hello!</h2>
+    </div>
+    <div>
+      <p>My name is Bounlisth Duanprachanh. I am a proud father of three sons, the owner of this company, and of <a href="https://www.nakai-resort.com"><b>Nakai Resort</b></a> set on top of a mountain in the beautiful district of Nakai. I have years of experience offering guided tours all over Laos. As a local I have a unique insight into the highlights of this country in an authentic setting. I'm looking forward to being of service to, take look at the <a href="/tours">tour and travel</a> packages we have to offer. </p>
+    </div>
+  </div>
+</section>
+
+<!-- Services we provide -->
+<section class="ftco-section services-section bg-light">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="media block-6 services d-block">
+          <div class="icon"><span class="flaticon-yatch"></span></div>
+          <div class="media-body ">
+            <h3 class="heading mb-3">Special Services</h3>
+            <p>We provide special services which include kayaking, waterfall visits, adventurous tours and <a href="https://www.nakai-resort.com">accomodation</a>. Take a look at our <a href="/tours">tour packages</a> for more information</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="media block-6 services d-block">
+          <div class="icon"><span class="flaticon-around"></span></div>
+          <div class="media-body">
+            <h3 class="heading mb-3">Travel Arrangements</h3>
+            <p>Our travel arrangements include everything from international flights, to local transport, train and boat trips.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+        <div class="media block-6 services d-block">
+          <div class="icon"><span class="flaticon-compass"></span></div>
+          <div class="media-body">
+            <h3 class="heading mb-3">Private Guide</h3>
+            <p>All of our tours include a private english speaking (local) guide which offer a unique insights into the highlights of the Laos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Travel packages -->
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section text-center ftco-animate">
+        <h2 class="mb-4">Our Popular Tour Packages</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+<% tours.forEach((tour) => { %>
+      <div class="col-sm col-md-6 col-lg ftco-animate">
+        <div class="destination">
+          <a href="/tours/<%= tour._id %>" class="img img-2 d-flex justify-content-center align-items-center rounded" style="background-image: url('<%= tour.thumbnail %>');">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <span class="icon-link"></span>
+            </div>
+          </a>
+          <div class="text p-3">
+            <div class="d-flex">
+              <div class="one">
+                <h3><a href="/tours/<%= tour._id %>"><b><%= tour.title %></b></a></h3>
+              </div>
+            </div>
+            <% var len = 75; %>
+            <% var truncatedDes = tour.generalDescription.substring(0,len) + "...";%>
+            <p class="transformText"><%= truncatedDes %></p>
+            <% var duration = 0 %>
+            <% tour.dayInfo.forEach( () => { duration += 1 } )%>
+            <p class="days"><span><%= duration %> days <%= duration - 1 %> nights</span></p>
+            <% var categories = "" %>
+            <% tour.categories.forEach( (cat) => { categories += cat + " " } ) %>
+            <p class="days"><span> <%= categories %></span></p>
+            <hr>
+            <p class="bottom-area d-flex">
+
+            <% var locations = ""; %>
+            <% tour.locations.forEach ((location ) => { locations += location + " "}) %>
+              <span><i class="icon-map-o"></i> <%= locations %></span>
+            </p>
+            <br>
+            <span class="ml-auto"><a href="/tours/<%= tour._id %>" class="float-right btn btn-success rounded btn-sm">Discover</a></span>
+          </div>
+        </div>
+      </div>
+<%})%>
+
+    </div>
+  </div>
+</section>
+
+<% include partials/footer %>

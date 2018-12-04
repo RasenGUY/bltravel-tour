@@ -1,0 +1,102 @@
+<% include partials/header %>
+
+
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md ftco-animate">
+
+        <form class="some-form" action="/admin/tours/<%= tour._id %>/edit/dayinfo?_method=PUT" method="POST">
+
+          <!-- tour info -->
+          <header><h3 class="text-center">Add the information related to each day</h3></header>
+          <br>
+
+        <% for(var i = 1; i <= tour.duration; i++){ %>
+
+          <% if ( tour.dayInfo[i-1] !== undefined ){ %>
+
+         <div class="row">
+           <label for="day" class="col-md-1"><h4>Day</h4></label>
+           <div class="col-md-11">
+             <input id="#day" type="number" name="dayInfo<%= i-1 %>day" value="<%= i %>" class="form-control-plaintext" readonly >
+           </div>
+         </div>
+         <hr>
+         <br>
+         <div class="row">
+           <div class="col-md-10">
+             <input type="text" name="dayInfo<%= i-1 %>title" value="<%= tour.dayInfo[i-1].title %>"  class="form-control">
+           </div>
+           <div class="col-md-2">
+             <input type="number" name="dayInfo<%= i-1 %>imageamount" value="<%= tour.dayInfo[i-1].imageamount %>"  class="form-control">
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-md-10">
+             <input type="text" name="dayInfo<%= i-1 %>route" value="<%= tour.dayInfo[i-1].route%>" class="form-control">
+           </div>
+           <div class="col-md-2">
+             <input type="number" name="dayInfo<%= i-1 %>distance" value="<%= tour.dayInfo[i-1].distance%>" class="form-control">
+           </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col">
+              <textarea name="dayInfo<%= i-1 %>description" rows="8" cols="80" class="form-control"><%= tour.dayInfo[i-1].description%></textarea>
+           </div>
+         </div>
+         <br>
+
+           <% } else { %>
+
+             <div class="row">
+               <label for="day" class="col-md-1"><h4>Day</h4></label>
+               <div class="col-md-11">
+                 <input id="#day" type="number" name="dayInfo<%= i-1 %>day"  value="<%= i %>" class="form-control-plaintext" readonly >
+               </div>
+             </div>
+             <hr>
+             <br>
+             <div class="row">
+               <div class="row">
+                 <div class="col-md-10">
+                   <input type="text" name="dayInfo<%= i-1 %>title" placeholder="Title of the day"  class="form-control">
+                 </div>
+                 <div class="col-md-2">
+                   <input type="number" name="dayInfo<%= i-1 %>imageamount" placeholder="how many images ?"  class="form-control">
+                 </div>
+               </div>
+               <br>
+               <div class="col-md-10">
+                 <input type="text" name="dayInfo<%= i-1 %>route"   placeholder="route of day i :location-location-location" class="form-control">
+               </div>
+               <div class="col-md-2">
+                 <input type="number" name="dayInfo<%= i-1 %>distance"  placeholder="distance in Km traveling in day<%= i %>" class="form-control">
+               </div>
+             </div>
+             <br>
+             <div class="row">
+               <div class="col">
+                 <textarea name="dayInfo<%= i-1 %>description" rows="8" cols="80" placeholder="Descritption of the day activity, what are you guys going to do on day: <%= i %>?" class="form-control"></textarea>
+               </div>
+             </div>
+             <br>
+
+             <% } %>
+
+       <% } %>
+
+          <input type="submit" name="" value="Continue" class="btn btn-success float-right rounded">
+          <a class="btn btn-success rounded" href="/tours" role="button">Exit to tours page</a>
+        </form>
+
+      </div> <!-- .col-md-8 -->
+    </div>
+  </div>
+
+</section> <!-- .section -->
+
+
+<% include partials/footer %>

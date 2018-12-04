@@ -1,0 +1,48 @@
+<% include partials/header %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/"><img src="/static/images/logo/logo-big.svg" alt="Bltravel Logo" class="logo-on"></a>
+
+
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="/admin/options" class="nav-link">Options</a></li>
+        <li class="nav-item"><a href="/admin/tours" class="nav-link">Tours</a></li>
+
+
+      </ul>
+    </div>
+
+</nav>
+<!-- END nav -->
+<br>
+<br>
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 ftco-animate">
+
+        <form  action="/admin" method="post">
+          <header class="text-center"><h3>Administration login</h3></header>
+          <br>
+          <input type="text" name="username"  placeholder="username" class="form-control">
+          <br>
+          <input type="password" name="password"  placeholder="password" class="form-control">
+          <br>
+          <input type="submit" name="submit-button" value="LOGIN" class="btn btn-success btn-block rounded">
+        </form>
+        <br>
+
+        <!-- <form class="" action="/logout" method="get">
+          <input type="submit" name="submit-button" value="LOGOUT" class="btn btn-danger btn-block rounded">
+        </form> -->
+      </div> <!-- .col-md-8 -->
+
+    </div>
+  </div>
+
+</section> <!-- .section -->
+
+
+<% include partials/footer %>

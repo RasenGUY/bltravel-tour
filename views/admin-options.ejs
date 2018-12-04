@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/"><img src="/static/images/logo/logo-big.svg" alt="Bltravel Logo" class="logo-on"></a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="/admin/options" class="nav-link">Options</a></li>
+        <li class="nav-item"><a href="/admin/tours" class="nav-link">Tours</a></li>
+        <li class="nav-item logout" ><a href="/logout" method="get" class="nav-link">Logout</a></li>
+      </ul>
+    </div>
+
+</nav>
+<!-- END nav -->
+
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 ftco-animate">
+        <br>
+          <a href="/admin/tours/new" class="btn btn-success btn-block rounded">Create New Tour</a>
+        <br>
+        <a href="/admin/tours/" class="btn btn-success btn-block rounded">Edit a Tour</a>
+
+
+        </div>
+    </div>
+  </div>
+
+</section> <!-- .section -->
+
+
+<% include partials/footer %>
