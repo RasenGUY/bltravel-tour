@@ -756,7 +756,8 @@ var tours = [
 //   }
 // });
 
+let port =  process.env.PORT || 3000;
 // start up server
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("started server");
 });
