@@ -99,13 +99,16 @@
 </section> <!-- .section -->
 
 <script>
-  ClassicEditor
-    .create( document.querySelector( '#editor' ) )
-    .then( editor => {
-      console.log( editor );
-    } )
-    .catch( error => {
-      console.error( error );
-    } );
+  let form = document.querySelectorAll('#editor');
+  form.forEach((textarea, index) => {
+    ClassicEditor
+      .create( document.querySelectorAll( '#editor' )[index] )
+      .then( editor => {
+        console.log( editor );
+      } )
+      .catch( error => {
+        console.error( error );
+      } );
+  })
 </script>
 <% include partials/footer %>
