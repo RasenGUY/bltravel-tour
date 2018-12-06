@@ -31,7 +31,7 @@
             <br>
             <div class="row">
               <div class="col-md-6">
-                <textarea name="tour[generalDescription]" value="" placeholder="General description or introduction of the tour" class="form-control" rows="10"></textarea>
+                <textarea name="tour[generalDescription]" value="" placeholder="General description or introduction of the tour" class="form-control" rows="10" id="editor"></textarea>
               </div>
               <div class="col-md-6">
                 <input type="number" name="tour[duration]" value="" placeholder="how many days does this tour take" class="form-control">
@@ -47,5 +47,14 @@
     </div>
 
   </section> <!-- .section -->
-
+  <script>
+    ClassicEditor
+      .create( document.querySelector( '#editor' ) )
+      .then( editor => {
+        console.log( editor );
+      } )
+      .catch( error => {
+        console.error( error );
+      } );
+  </script>
 <% include partials/footer %>

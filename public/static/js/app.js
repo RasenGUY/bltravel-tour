@@ -1,6 +1,6 @@
 //  convert tags of HTML string into Text
 
-let transFromText = () => {
+let transformText = () => {
   document.querySelectorAll(".transformText").forEach((text)=>{
   text.innerHTML = text.textContent
   })
@@ -8,6 +8,7 @@ let transFromText = () => {
 let changeColorOfBold = () => {
   // theme color --> green
   $("b").css("color", "#4F9E1E");
+  $("strong").css("color", "#4F9E1E");
 }
-transFromText();
+transformText();
 changeColorOfBold();

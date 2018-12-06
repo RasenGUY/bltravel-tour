@@ -33,7 +33,7 @@
           <br>
           <div class="row">
             <div class="col-md-6">
-              <textarea name="tour[generalDescription]" class="form-control" rows="10"><%= tour.generalDescription %></textarea>
+              <textarea name="tour[generalDescription]" class="form-control" rows="10" id="editor"><%= tour.generalDescription %></textarea>
             </div>
             <div class="col-md-6">
               <input type="number" name="tour[duration]" value="<%= tour.duration %>" class="form-control">
@@ -51,5 +51,14 @@
 
 </section> <!-- .section -->
 
-
+<script>
+  ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .then( editor => {
+      console.log( editor );
+    } )
+    .catch( error => {
+      console.error( error );
+    } );
+</script>
 <% include partials/footer %>

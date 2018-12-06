@@ -44,7 +44,7 @@
          <br>
          <div class="row">
            <div class="col">
-              <textarea name="dayInfo<%= i-1 %>description" rows="8" cols="80" class="form-control"><%= tour.dayInfo[i-1].description%></textarea>
+              <textarea name="dayInfo<%= i-1 %>description" rows="8" cols="80" class="form-control" id="editor"><%= tour.dayInfo[i-1].description%></textarea>
            </div>
          </div>
          <br>
@@ -79,7 +79,7 @@
              <br>
              <div class="row">
                <div class="col">
-                 <textarea name="dayInfo<%= i-1 %>description" rows="8" cols="80" placeholder="Descritption of the day activity, what are you guys going to do on day: <%= i %>?" class="form-control"></textarea>
+                 <textarea name="dayInfo<%= i-1 %>description" rows="8" cols="80" placeholder="Descritption of the day activity, what are you guys going to do on day: <%= i %>?" class="form-control" id="editor"></textarea>
                </div>
              </div>
              <br>
@@ -98,5 +98,14 @@
 
 </section> <!-- .section -->
 
-
+<script>
+  ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .then( editor => {
+      console.log( editor );
+    } )
+    .catch( error => {
+      console.error( error );
+    } );
+</script>
 <% include partials/footer %>

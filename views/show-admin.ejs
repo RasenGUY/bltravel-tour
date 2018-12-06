@@ -36,21 +36,22 @@
 </div>
 
 <section class="ftco-section ftco-degree-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 ftco-animate text-justify">
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 ftco-animate text-justify">
+      <!-- <div class="container"> -->
 
         <h2><b>Description</b></h2>
-        <p><%= tour.generalDescription %> </p>
+        <p class="transformText"><%= tour.generalDescription %> </p>
 
         <% tour.dayInfo.forEach( (info) => { %>
         <h2 class="mb-3">Day <%= info.day %>: <b><%= info.title %></b></h2>
         <h5>Route: <%= info.route  %> (<%= info.distance  %>Km/<%= Math.round(info.distance * 1000 * 0.00062137119223733) %>Mi)</h5>
-        <div><%= info.description %></div>
+        <div class="transformText text-justify"><%= info.description %></div>
         <br>
         <br>
-
         <!-- image slider -->
+        <%if (info.imageamount !== 0){%>
         <div class="container">
           <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -59,13 +60,16 @@
                 <img src="<%= image.link %>" data-title="<%= image.title %>" data-description="<%= image.description %>">
                 <% })%>
               </div>
+
             </div>
           </div>
         </div>
         <br>
         <br>
+      <%} else {%>
 
-        <% } )%>
+      <%}%>
+        <% }) %>
         <div class="row">
 
           <div class="col-md-4 text-center">

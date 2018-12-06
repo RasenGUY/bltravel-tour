@@ -33,7 +33,7 @@
            <br>
            <div class="row">
              <div class="col-md-8">
-               <textarea name="dayInfo<%= i %>[description]" rows="8" cols="80" placeholder="Descritption of the day activity, what are you guys going to do on day: <%= i %>?" class="form-control"></textarea>
+               <textarea name="dayInfo<%= i %>[description]" rows="8" cols="80" placeholder="Descritption of the day activity, what are you guys going to do on day: <%= i %>?" class="form-control" id="editor"></textarea>
              </div>
              <div class="col-md-4">
                <input type="number" name="dayInfo<%= i %>[imageamount]" value="" placeholder="how many images ?" class="form-control">
@@ -51,5 +51,14 @@
     </div>
 
   </section> <!-- .section -->
-
+  <script>
+    ClassicEditor
+      .create( document.querySelector( '#editor' ) )
+      .then( editor => {
+        console.log( editor );
+      } )
+      .catch( error => {
+        console.error( error );
+      } );
+  </script>
 <% include partials/footer %>

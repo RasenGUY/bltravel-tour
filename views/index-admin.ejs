@@ -21,7 +21,7 @@
       <% tours.forEach( (tour) => { %>
         <div class="col-sm col-md-6 col-lg-4 ftco-animate">
           <div class="destination">
-            <a href="/admin/tours/<%= tour._id %>" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('<%= tour.thumbnail %>');">
+            <a href="/tours/<%= tour._id %>" class="img img-2 d-flex justify-content-center align-items-center rounded" style="background-image: url('<%= tour.thumbnail %>');">
               <div class="icon d-flex justify-content-center align-items-center">
                 <span class="icon-link"></span>
               </div>
@@ -34,13 +34,13 @@
               </div>
               <% var len = 75; %>
               <% var truncatedDes = tour.generalDescription.substring(0,len) + "...";%>
-              <p><%= truncatedDes %> </p>
+              <p class="transformText" ><%= truncatedDes %> </p>
               <% var duration = 0 %>
               <% tour.dayInfo.forEach( () => { duration += 1 } )%>
               <p class="days"><span><%= duration %> days <%= duration + 1 %> nights</span></p>
               <% var categories = "" %>
               <% tour.categories.forEach( (cat) => { categories += cat + " " } ) %>
-              <p class="days"><span> <%= categories %></span></p>
+              <p class="days"><span><%= categories %></span></p>
               <hr>
               <p class="bottom-area d-flex">
               <% var locations = ""; %>
@@ -52,11 +52,7 @@
           </div>
         </div>
   <%})%>
-
-
-
     </div>
-
   </div>
 </section> <!-- .section -->
 
