@@ -50,7 +50,7 @@ const dbURI = process.env.DB_URI;
 // start up server after connecting to db
 let port =  process.env.PORT || 3000;
 
-// connects to db before initializing server
+// connects to db before initializing server here
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }).then(result => {
   // initialize(Tour, User);
   app.listen(port, function(){
