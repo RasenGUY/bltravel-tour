@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express         = require("express"),
 compression           = require('compression')
 app                   = express(),
@@ -17,7 +18,7 @@ passportLocalMongoose = require('passport-local-mongoose'),
 indexRoutes           = require('./lib/routes/index.js'),
 adminRoutes           = require('./lib/routes/admin.js'),
 emailRoutes           = require('./lib/routes/email.js');
-
+const { initialize }  = require('./initialize');
 
 
 // using modules and adding middleware
@@ -42,13 +43,21 @@ app.use(indexRoutes);
 app.use(adminRoutes);
 app.use(emailRoutes);
 
-
 // connect to database
 // mongoose.connect('mongodb://localhost/bltravel_tour', { useNewUrlParser: true});
-mongoose.connect('mongodb://bltravelt:Tan77772911@ds125574.mlab.com:25574/bltravelt', { useNewUrlParser: true});
+const dbURI = process.env.DB_URI;
 
+// start up server after connecting to db
 let port =  process.env.PORT || 3000;
-// start up server
-app.listen(port, function(){
+
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true }).then(result => {
+  // initialize(Tour, User);
+  app.listen(port, function(){
   console.log("started server");
-});
+  })
+}).catch( e => console.log(e));
+
+
+
+
+
